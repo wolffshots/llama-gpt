@@ -5,7 +5,7 @@ services:
     build:
       context: ./cuda
       dockerfile: ggml.Dockerfile
-    restart: on-failure
+    # restart: on-failure
     volumes:
       - './models:/models'
       - './cuda:/cuda'

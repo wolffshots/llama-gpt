@@ -43,14 +43,10 @@ n_threads=$(grep -c ^processor /proc/cpuinfo)
 n_ctx=4096
 
 # Offload layers to GPU
-n_gpu_layers=10
+n_gpu_layers=20
 
-# Define batch size based on total RAM
-total_ram=$(cat /proc/meminfo | grep MemTotal | awk '{print $2}')
-n_batch=2096
-if [ $total_ram -lt 8000000 ]; then
-    n_batch=1024
-fi
+# Define batch size
+n_batch=512
 
 # Display configuration information
 echo "Initializing server with:"

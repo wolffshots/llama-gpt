@@ -93,7 +93,7 @@ if [ "$with_cuda" -eq 1 ]
 then
     if [ "$model_type" = "ggml" ]
     then
-        docker compose -f docker-compose-cuda-ggml.yml up --build
+        docker compose -f docker-compose-cuda-ggml.yml up --build llama-gpt-api-cuda-ggml
     else
         docker compose -f docker-compose-cuda-gguf.yml up --build
     fi
